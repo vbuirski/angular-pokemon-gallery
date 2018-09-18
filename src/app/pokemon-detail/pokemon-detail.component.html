@@ -1,0 +1,17 @@
+<div class="container">
+        <h1>My Pokemons</h1>
+        <div>
+            <app-pokemon-search></app-pokemon-search>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-3 col-xl-3" *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 8, currentPage: p }">
+            <img src="../assets/img/{{pokemon.id}}.png">
+            <div>{{pokemon.id}}</div>
+            <div>{{pokemon.name}}</div>
+        </div>
+        <hr>
+      
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+        <hr>
