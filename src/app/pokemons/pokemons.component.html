@@ -1,21 +1,31 @@
-<h2>My Pokemons</h2>
-<ul *ngFor="let pokemon of pokemons">
-    <div class=row>
-      <div class="column">
-        <img src="../assets/img/2.png">
-      </div>
+<div class="container">
+  <h1>My Pokemons</h1>
+  <ul *ngFor="let pokemon of pokemons">
+      <div class=row>
+        <div class="column">
+          <img src="../assets/img/2.png">
+          <div>{{pokemon.id}}</div>
+          <div>{{pokemon.name}}</div>
+        </div>
 
-      <div class="column">
-        <img src="../assets/img/3.png">
-      </div>
+        <div class="column">
+          <img src="../assets/img/3.png">
+          <div>{{pokemon.id}}</div>
+          <div>{{pokemon.name}}</div>
+        </div>
 
-      <div class="column">
-        <img src="../assets/img/4.png">
-      </div>
+        <div class="column">
+          <img src="../assets/img/4.png">
+          <div>{{pokemon.id}}</div>
+          <div>{{pokemon.name}}</div>
+        </div>
 
-      <div class="column">
-        <img src="../assets/img/4.png">
+        <div class="column">
+          <img src="../assets/img/4.png">
+          <div>{{pokemon.id}}</div>
+          <div>{{pokemon.name}}</div>
+        </div>
       </div>
-    </div>
-  <hr>
-</ul>
+    <hr>
+  </ul>
+</div>

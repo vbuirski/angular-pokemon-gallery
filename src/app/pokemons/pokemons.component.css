@@ -1,4 +1,8 @@
 /*PokemonComponent's private CSS styles */
+.container {
+    position: relative;
+    text-align: center;
+}
 .row {
     display: -ms-flexbox; /* IE10 */
     display: flex;
@@ -12,14 +16,21 @@
     -ms-flex: 25%; /* IE10 */
     flex: 25%;
     max-width: 25%;
-    padding: 0 4px;
+    padding: 0 2px;
   }
   
   .column img {
     margin-top: 8px;
     vertical-align: middle;
   }
-  
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   /* Responsive layout - makes a two column-layout instead of four columns */
   @media screen and (max-width: 800px) {
     .column {

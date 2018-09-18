@@ -9,11 +9,6 @@ import { POKEMONS } from '../mock-pokemons';
 })
 export class PokemonsComponent implements OnInit {
 
-  pokemon: Pokemon = {
-    id: 1,
-    name: 'Pika'
-  };
-
   pokemons = POKEMONS;
 
   constructor() { }
