@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AppComponent } from './app.component';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 
@@ -10,7 +10,8 @@ import { PokemonsComponent } from './pokemons/pokemons.component';
     PokemonsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,4 +12,10 @@ export const POKEMONS: Pokemon[] = [
     { id: 18, name: 'Dr IQ' },
     { id: 19, name: 'Magma' },
     { id: 20, name: 'Tornado' }
+    { id: 21, name: 'Magneta' },
+    { id: 22, name: 'RubberMan' },
+    { id: 23, name: 'Dynama' },
+    { id: 24, name: 'Dr IQ' },
+    { id: 25, name: 'Magma' },
+    { id: 26, name: 'Tornado' }
   ];

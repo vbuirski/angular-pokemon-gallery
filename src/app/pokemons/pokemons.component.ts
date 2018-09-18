@@ -9,8 +9,9 @@ import { POKEMONS } from '../mock-pokemons';
 })
 export class PokemonsComponent implements OnInit {
 
+  p: number = 1;
   pokemons = POKEMONS;
-
+  
   constructor() { }
 
   ngOnInit() {
