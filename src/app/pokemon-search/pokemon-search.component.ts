@@ -24,6 +24,7 @@ export class PokemonSearchComponent implements OnInit {
   // Push a search term into the observable stream.
   search(term: string): void {
     this.searchTerms.next(term);
+    this.pokemonService.getPokemons();
   }
  
   ngOnInit(): void {
@@ -38,4 +39,5 @@ export class PokemonSearchComponent implements OnInit {
       switchMap((term: string) => this.pokemonService.searchPokemons(term)),
     );
   }
+
 }
