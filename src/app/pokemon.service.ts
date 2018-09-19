@@ -15,17 +15,27 @@ const httpOptions = {
 })
 export class PokemonService {
 
-  private pokemonsUrl = 'api/pokemons';
+ // private pokemonsUrl = 'api/pokemons';
+  private pokemonsUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=151';
 
   constructor(
     private http: HttpClient) { }
 
       /** GET pokemons from the server */
   getPokemons (): Observable<Pokemon[]> {
-    return this.http.get<Pokemon[]>(this.pokemonsUrl)
+
+    const convertToPokemonArray = map((value: Object) => {
+        var objList = value['results'];
+        var pokemons = objList.map( (pokemon, index) => {
+          return new Pokemon( pokemon.url, pokemon.name);
+        });
+        return pokemons;
+      });
+
+    return convertToPokemonArray(this.http.get<Object>(this.pokemonsUrl)
       .pipe(
         catchError(this.handleError('getPokemons', []))
-      );
+      ));
   }
 
   /** GET hero by id. Return `undefined` when id not found */
@@ -58,6 +68,7 @@ export class PokemonService {
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
+      console.error(operation + ': ' + error); // log to console
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };

@@ -5,11 +5,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AppComponent } from './app.component';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
 
 @NgModule({
   declarations: [
@@ -21,13 +18,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     NgxPaginationModule,
     HttpClientModule,
     FormsModule,
-    Ng2SearchPipeModule, 
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
-
-    HttpClientInMemoryWebApiModule,
-
+    Ng2SearchPipeModule,
     AppRoutingModule
   ],
   providers: [],
