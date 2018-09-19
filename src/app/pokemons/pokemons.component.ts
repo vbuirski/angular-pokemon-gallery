@@ -14,13 +14,13 @@ export class PokemonsComponent implements OnInit {
   filteredPokemons: Pokemon[];
   pokemons: Pokemon[];
 
-  currentSearch: string;
+  searchText: string;
 
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit() {
     this.p = 1;
-    this.currentSearch = "";
+    this.searchText = "";
     this.getPokemons();
   }
 
@@ -35,7 +35,7 @@ export class PokemonsComponent implements OnInit {
   updateFilteredPokemons(): void {
     this.filteredPokemons =
       this.allPokemons
-        .filter((pokemon) => pokemon.name.match(new RegExp(this.currentSearch, 'i')));
+        .filter((pokemon) => pokemon.name.match(new RegExp(this.searchText, 'i')));
 
     this.updateDisplayedPokemons();
   }
@@ -46,7 +46,7 @@ export class PokemonsComponent implements OnInit {
   }
 
   search(keyword: string) {
-    this.currentSearch = keyword;
+    this.searchText = keyword;
     this.updateFilteredPokemons();
   }
 
