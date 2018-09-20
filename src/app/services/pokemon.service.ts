@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Pokemon } from './pokemon';
+import { Pokemon } from '../model/pokemon';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,7 +15,6 @@ const httpOptions = {
 })
 export class PokemonService {
 
- // private pokemonsUrl = 'api/pokemons';
   private pokemonsUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=151';
 
   constructor(

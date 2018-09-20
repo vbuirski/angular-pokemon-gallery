@@ -1,11 +1,22 @@
 /*PokemonComponent's private CSS styles */
-pagination-controls {
-  padding-top: 20px;
+
+body {
+  font-family: Sans-Serif;
 }
 
-.container {
-    position: relative;
-    text-align: center;
+a {
+  cursor: pointer;
+  padding: 5px;
+  align-content: center;
+}
+
+.id {
+  color: rgb(143, 79, 79);
+}
+
+.pagination {
+  padding-top: 5px;
+  padding-left:10px;
 }
 .row {
     display: -ms-flexbox; /* IE10 */
@@ -37,6 +48,7 @@ pagination-controls {
 
   #search-box {
     margin-left: 20px;
+    color: rgb(39, 39, 39);
   }
 
   /* Responsive layout - makes a two column-layout instead of four columns */

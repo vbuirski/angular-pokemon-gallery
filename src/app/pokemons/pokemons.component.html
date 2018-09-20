@@ -1,21 +1,43 @@
 <div class="container">
   <hr>
-  <div>
-      <label for="search-box">Find Your Pokemon!</label>
-      <input #searchBox id="search-box" [(ngModel)]="searchText" (keyup)="search(searchBox.value)" />     
+  <div class="row justify-content-center">
+        <label for="search-box">Find Your Pokemon!</label>
+        <input #searchBox id="search-box" [(ngModel)]="searchText" (keyup)="search(searchBox.value)" />     
   </div>
   
   <hr>
   <div class="row">
-    <div class="col-12 col-md-6 col-lg-3 col-xl-3" *ngFor="let pokemon of pokemons | paginate: { itemsPerPage: 20, currentPage: p }">
+    <div class="col-12 col-md-6 col-lg-3 col-xl-3" *ngFor="let pokemon of pokemons">
       <img src="../assets/img/{{pokemon.id}}.png">
-      <div>{{pokemon.id}}</div>
-      <div>{{pokemon.name}}</div>
+      <div class="id">#{{pokemon.id}}</div>
+      <div class="id">{{pokemon.name}}</div>
   </div>
   <hr>
   
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
-  </div>
+  <!-- pager -->
 
-  <hr>
+<div class="container">
+    <hr>
+    <div class="row justify-content-center">
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination"> 
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="setPage(1)"> first </a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="setPage(pager.currentPage - 1)"> prev </a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                <a (click)="setPage(page)">{{page}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="setPage(pager.currentPage + 1)"> next </a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="setPage(pager.totalPages)"> last </a>
+            </li>
+        </ul>
+    </div>
+    <hr>
+</div>
+<hr>
   

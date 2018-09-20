@@ -1,8 +1,10 @@
 /* Container holding the image and the text */
-.container {
+.header {
     position: relative;
     text-align: center;
     color: white;
+    font-family: Sans-Serif;
+    font-size: larger;
 }
 
 /* Top left text */
