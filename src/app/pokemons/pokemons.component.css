@@ -18,6 +18,7 @@ a {
   padding-top: 5px;
   padding-left:10px;
 }
+
 .row {
     display: -ms-flexbox; /* IE10 */
     display: flex;

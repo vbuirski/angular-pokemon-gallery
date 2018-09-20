@@ -39,14 +39,6 @@ export class PokemonsComponent implements OnInit {
       });
   }
 
-  setPage(page: number) {
-    // get pager object from service
-    this.pager = this.pagerService.getPager(this.filteredPokemons.length, page);
-
-    // get current page of items
-    this.pokemons = this.filteredPokemons.slice(this.pager.startIndex, this.pager.endIndex + 1);
-}
-
   updateFilteredPokemons(): void {
     this.filteredPokemons =
       this.allPokemons
@@ -57,8 +49,16 @@ export class PokemonsComponent implements OnInit {
   }
 
   updateDisplayedPokemons(): void {
-
     this.pokemons = this.filteredPokemons;
+  }
+
+  setPage(page: number) {
+    if (page < 1) {
+      return;
+    }
+
+    this.pager = this.pagerService.getPager(this.filteredPokemons.length, page);
+    this.pokemons = this.filteredPokemons.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
 
   search(keyword: string) {
