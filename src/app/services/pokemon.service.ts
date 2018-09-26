@@ -28,7 +28,8 @@ export class PokemonService {
         var pokemons = objList.map( (pokemon, index) => {
           return new Pokemon( pokemon.url, pokemon.name);
         });
-        return pokemons;
+
+        return pokemons.slice(0, 151);
       });
 
     return convertToPokemonArray(this.http.get<Object>(this.pokemonsUrl)
