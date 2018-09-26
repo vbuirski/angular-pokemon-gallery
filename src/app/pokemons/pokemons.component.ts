@@ -67,4 +67,16 @@ export class PokemonsComponent implements OnInit {
     this.setPage(1);
   }
 
+  isFirstPage() {
+    return this.pager.currentPage === 1;
+  }
+
+  isLastPage() {
+    return this.pager.currentPage === this.pager.totalPages;
+  }
+
+  isActive(page: number) {
+    return this.pager.currentPage === page;
+  }
+
 }

@@ -26,25 +26,28 @@
             </div>
         </div>
     </div>
-  
+
+    
     <!-- pager -->
     <div class="container">
         <hr>
         <div class="row justify-content-center">
             <ul *ngIf="pager.pages && pager.pages.length" class="pagination"> 
-                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <li [ngClass]="{disabled: isFirstPage(), enabled: !isFirstPage()}">
                     <a (click)="setPage(1)"> first </a>
                 </li>
-                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <li [ngClass]="{disabled: isFirstPage(), enabled: !isFirstPage()}">
                     <a (click)="setPage(pager.currentPage - 1)"> prev </a>
                 </li>
-                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                <li *ngFor="let page of pager.pages" 
+                    [ngClass]="{active: isActive(page), enabled: !isActive(page)}">
+                    
                     <a (click)="setPage(page)">{{page}}</a>
                 </li>
-                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <li [ngClass]="{disabled: isLastPage(), enabled: !isLastPage()}">
                     <a (click)="setPage(pager.currentPage + 1)"> next </a>
                 </li>
-                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <li [ngClass]="{disabled: isLastPage(), enabled: !isLastPage()}">
                     <a (click)="setPage(pager.totalPages)"> last </a>
                 </li>
             </ul>

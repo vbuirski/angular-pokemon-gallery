@@ -1,5 +1,4 @@
 /*PokemonComponent's private CSS styles */
-
 body {
   font-family: Sans-Serif;
 }
@@ -13,6 +12,22 @@ a {
 img {
   display: block;
   margin: 0 auto;
+}
+
+.disabled {
+  color: lightgray;
+  cursor: pointer;
+}
+
+.enabled {
+  color: grey;
+  cursor: pointer;
+
+}
+.active {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
 }
 
 .pokerow {
