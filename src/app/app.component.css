@@ -1,10 +1,8 @@
 /* Container holding the image and the text */
 .header {
     position: relative;
-    top: -50%;
     text-align: center;
     color: white;
-
 }
 
 /* Top left text */
@@ -13,5 +11,5 @@
     top: 50px;
     left: 50px;
     font-family: pokemon;
-    font-size: 300%;
+    font-size: xx-large;
 }
