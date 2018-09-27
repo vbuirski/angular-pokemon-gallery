@@ -1,7 +1,7 @@
 <div class="body">
     <hr>
     <div class="row justify-content-center">
-        <label for="search-box">Find Your Pokemon!</label>
+        <label class="search-label" for="search-box">Find Your Pokemon!</label>
         <input #searchBox id="search-box" [(ngModel)]="searchText" (keyup)="search(searchBox.value)" />     
     </div>
   
@@ -14,7 +14,7 @@
                         <div class="col-6 col-md-12 col-xl-12">
                             <img src="../assets/img/{{pokemon.id}}.png" />
                         </div>
-                        <div class="col-6 col-md-12 col-xl-12">
+                        <div class="id col-6 col-md-12 col-xl-12">
                             <div>#{{pokemon.id}}</div>
                             <div>{{pokemon.name}}</div>
                         </div>
