@@ -1,15 +1,17 @@
 /* Container holding the image and the text */
 .header {
     position: relative;
+    top: -50%;
     text-align: center;
     color: white;
-    font-family: Sans-Serif;
-    font-size: larger;
+
 }
 
 /* Top left text */
 .top-left {
     position: absolute;
-    top: 25px;
+    top: 50px;
     left: 50px;
+    font-family: pokemon;
+    font-size: 300%;
 }
